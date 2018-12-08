@@ -1,0 +1,9 @@
+<button
+  class="button"
+  [ngClass]="{
+    '-default': appearance === 'default',
+    '-ghost': appearance === 'ghost'
+  }"
+>
+  <ng-content></ng-content>
+</button>

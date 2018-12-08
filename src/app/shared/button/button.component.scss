@@ -1,0 +1,38 @@
+.button {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 100;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s;
+
+  &.-default {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+
+    &:hover {
+      background: rgba(#000, 0.5);
+    }
+
+    &:active {
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  &.-ghost {
+    background: none;
+    border-color: #000;
+
+    &:hover {
+      background: rgba(#000, 0.5);
+      color: #fff;
+    }
+
+    &:active {
+      background: #000;
+    }
+  }
+}

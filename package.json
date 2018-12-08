@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "yarn build && now ./dist/ng-dragons && now alias"
+    "generate": "ng generate",
+    "deploy": "yarn build && now ./dist/ng-dragons && now alias",
+    "storybook": "start-storybook -p 9009 -c .storybook"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/router": "~7.1.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
+    "sanitize.css": "^8.0.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
@@ -30,9 +33,12 @@
     "@angular/cli": "~7.1.2",
     "@angular/compiler-cli": "~7.1.0",
     "@angular/language-service": "~7.1.0",
+    "@babel/core": "^7.2.0",
+    "@storybook/angular": "^4.0.12",
     "@types/jasmine": "~3.3.0",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~10.12.12",
+    "@types/node": "^10.12.12",
+    "babel-loader": "^8.0.4",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
