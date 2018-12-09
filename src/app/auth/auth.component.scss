@@ -1,81 +1,20 @@
 :host {
   display: flex;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #314961;
 }
 
 .form {
-  text-align: center;
+  max-width: 500px;
   position: relative;
-  background: #fff;
-  padding: 40px 25px 25px;
-  border: 2px solid rgba(#314961, 0.5);
-  border-radius: 5px;
-  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.35);
 
-  .wrapper {
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .alert {
-    margin: 0px 0 0;
-    text-align: left;
-    font-size: 10px;
-    color: #fff;
-    font-weight: bold;
-    background: red;
-    padding: 4px 5px;
-    position: relative;
-    top: -2px;
-    border-radius: 0px 0px 5px 5px;
-  }
-
-  .title {
-    position: absolute;
-    top: 0;
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 100;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #9aa5b0;
-    margin: 0;
-    line-height: 24px;
-    padding: 10px 30px;
-    border-radius: 5px;
-    color: #fff;
-    border: 2px solid rgba(#314961, 0.5);
-  }
-
-  .group {
-    margin-bottom: 20px;
-  }
-
-  .field {
-    padding: 10px;
-    border: none;
-    border-bottom: 2px solid #314961;
-  }
-
-  .button {
-    padding: 10px;
-    background: #314961;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 12px;
+  .mat-form-field {
     width: 100%;
+  }
 
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+  .mat-card-content {
+    margin-top: 16px;
   }
 }

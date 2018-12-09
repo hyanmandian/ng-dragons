@@ -1,0 +1,18 @@
+
+.layout {
+  padding-top: 64px;
+
+  @media screen and (max-width: 599px) {
+    padding-top: 56px;
+  }
+
+  .fixed {
+    top: 0;
+    left: 0;
+    position: fixed;
+  }
+
+  .mat-toolbar-row:first-child {
+    justify-content: space-between;
+  }
+}

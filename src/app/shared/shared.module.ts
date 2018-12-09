@@ -1,12 +1,25 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import {
+  MatIconModule,
+  MatDialogModule,
+  MatButtonModule,
+  MatToolbarModule
+} from "@angular/material";
 
-import { ButtonComponent } from "./button/button.component";
-import { InputComponent } from './input/input.component';
+import { DialogComponent } from "./dialog/dialog.component";
+import { LayoutComponent } from "./layout/layout.component";
 
 @NgModule({
-  imports: [CommonModule],
-  exports: [ButtonComponent, InputComponent],
-  declarations: [ButtonComponent, InputComponent]
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatToolbarModule
+  ],
+  exports: [DialogComponent, LayoutComponent],
+  declarations: [DialogComponent, LayoutComponent],
+  entryComponents: [DialogComponent]
 })
 export class SharedModule {}

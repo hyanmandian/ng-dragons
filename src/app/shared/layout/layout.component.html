@@ -1,0 +1,19 @@
+<div class="layout">
+  <mat-toolbar class="fixed" color="primary">
+    <mat-toolbar-row class="mat-elevation-z6">
+      <span>Ng Dragons</span>
+
+      <div>
+        <button mat-icon-button (click)="logout()">
+          <mat-icon aria-label="Logout">logout</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h1>{{ title }}</h1>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <main><ng-content></ng-content></main>
+</div>
