@@ -6,7 +6,7 @@ export class GuestGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
-    const already = false;
+    const already = true;
 
     if (already) return true;
 
