@@ -1,1 +1,32 @@
-<app-button appearance="ghost">auth works!</app-button>
+<form class="form" #credentials="ngForm" (ngSubmit)="login(credentials.form.value);">
+  <fieldset class="wrapper">
+    <legend class="title">Sign in</legend>
+    <div class="group">
+        <input
+          autofocus
+          type="text"
+          class="field"
+          placeholder="Username"
+          required
+          name="user"
+          #user="ngModel"
+          ngModel
+        >
+        <p [hidden]="user.valid || user.pristine" class="alert">*Required</p>
+      </div>
+      <div class="group">
+        <input
+          autofocus
+          type="text"
+          class="field"
+          placeholder="Password"
+          required
+          name="pass"
+          #pass="ngModel"
+          ngModel
+        >
+        <p [hidden]="pass.valid || pass.pristine" class="alert">*Required</p>
+      </div>
+      <button [disabled]="!credentials.valid" type="submit" class="button">Login :D</button>
+  </fieldset>
+</form>

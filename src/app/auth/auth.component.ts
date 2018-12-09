@@ -1,4 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
+import { AuthService } from '../core/services/auth/auth.service';
+
+interface Credentials {
+  user: string;
+  pass: string;
+};
 
 @Component({
   selector: "app-auth",
@@ -6,7 +12,16 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./auth.component.scss"]
 })
 export class AuthComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  login(credentials: Credentials) {
+    try {
+      this.authService.login(credentials);
+    } catch (e) {
+      alert(e);
+    }
+  }
 }

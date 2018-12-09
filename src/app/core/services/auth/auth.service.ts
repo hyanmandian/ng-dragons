@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 interface Credentials {
   user: string;
   pass: string;
-  redirectTo: string;
+  redirectTo?: string;
 }
 
 const CREDENTIALS = {
