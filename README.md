@@ -4,6 +4,9 @@ Simple Angular application made with [Angular CLI](https://github.com/angular/an
 
 You can check this application running [here](http://ng-dragons.now.sh).
 
+Username: demo
+Password: demo
+
 ## Storybook
 
 Run `yarn storybook` to open components documentation. Navigate to `http://localhost:9009/`. The app will automatically reload if you change any of the source files.
