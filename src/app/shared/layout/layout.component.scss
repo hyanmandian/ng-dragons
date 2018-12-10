@@ -1,8 +1,9 @@
+@import "~@angular/material/theming";
 
 .layout {
   padding-top: 64px;
 
-  @media screen and (max-width: 599px) {
+  @media screen and (#{$mat-xsmall}) {
     padding-top: 56px;
   }
 
@@ -10,9 +11,25 @@
     top: 0;
     left: 0;
     position: fixed;
+    z-index: 1;
   }
 
   .mat-toolbar-row:first-child {
     justify-content: space-between;
+  }
+
+  footer {
+    padding: 16px;
+    background: map-get($mat-indigo, 500);
+    color: #fff;
+    text-align: center;
+
+    a {
+      color: #fff;
+    }
+
+    .mat-icon {
+      vertical-align: sub;
+    }
   }
 }

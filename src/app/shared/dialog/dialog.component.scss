@@ -1,0 +1,14 @@
+:host {
+  display: inline-block;
+}
+
+.mat-dialog-actions {
+  min-height: auto;
+  padding: 0;
+  margin-top: 16px;
+  margin-bottom: 0px;
+
+  > button {
+    flex: 1;
+  }
+}

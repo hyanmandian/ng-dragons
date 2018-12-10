@@ -43,16 +43,22 @@ export class DragonService {
       })
       .pipe(
         map(({ items }: Response) =>
-          items.sort((a, b) => {
-            if (a.name < b.name) {
-              return -1;
-            }
-            if (a.name > b.name) {
-              return 1;
-            }
-            return 0;
-          })
+          items
+            .filter(({ slug }) => !!slug)
+            .sort((a, b) => {
+              if (a.name < b.name) {
+                return -1;
+              }
+              if (a.name > b.name) {
+                return 1;
+              }
+              return 0;
+            })
         )
       );
+  }
+
+  delete(slug: string) {
+    return this.http.delete(`${BASE_URL}/${slug}`);
   }
 }

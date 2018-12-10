@@ -1,3 +1,10 @@
+@import "~@angular/material/theming";
+
 .mat-table {
   width: 100%;
+
+  th:last-child,
+  td:last-child {
+    text-align: right;
+  }
 }
