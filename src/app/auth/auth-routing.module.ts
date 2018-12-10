@@ -7,6 +7,7 @@ import { AuthComponent } from "./auth.component";
 const routes: Routes = [
   {
     path: "login",
+    pathMatch: "full",
     component: AuthComponent,
     canActivate: [GuestGuard],
   },

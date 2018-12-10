@@ -14,24 +14,29 @@
     <ng-container matColumnDef="created_at">
       <th mat-header-cell *matHeaderCellDef>Created at</th>
       <td mat-cell *matCellDef="let dragon">
-        {{ dragon.created_at | date: short }}
+        <span class="label">Created at: </span> {{ dragon.created_at | date: short }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let dragon">{{ dragon.name }}</td>
+      <td mat-cell *matCellDef="let dragon">
+        <span class="label">Name: </span> {{ dragon.name }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="type">
       <th mat-header-cell *matHeaderCellDef>Type</th>
-      <td mat-cell *matCellDef="let dragon">{{ dragon.type }}</td>
+      <td mat-cell *matCellDef="let dragon">
+        <span class="label">Type: </span> {{ dragon.type }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef>Actions</th>
       <td mat-cell *matCellDef="let dragon">
-        <a [routerLink]="['', dragon.slug]" mat-icon-button>
+        <span class="label">Actions: </span>
+        <a [routerLink]="['', dragon.slug, 'show']" mat-icon-button>
           <mat-icon aria-label="Show dragon">remove_red_eye</mat-icon>
         </a>
         <a [routerLink]="['', dragon.slug, 'edit']" mat-icon-button>

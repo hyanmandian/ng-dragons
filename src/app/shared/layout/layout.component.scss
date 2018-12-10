@@ -3,10 +3,6 @@
 .layout {
   padding-top: 64px;
 
-  @media screen and (#{$mat-xsmall}) {
-    padding-top: 56px;
-  }
-
   .fixed {
     top: 0;
     left: 0;
@@ -30,6 +26,14 @@
   main {
     padding: 16px;
     min-height: calc(100vh - 184px);
+  }
+
+  @media screen and (#{$mat-xsmall}) {
+    padding-top: 56px;
+
+    main {
+      min-height: calc(100vh - 168px)
+    }
   }
 
   footer {

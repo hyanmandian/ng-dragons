@@ -17,7 +17,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: ":slug",
+    path: ":slug/show",
     component: FormComponent,
     canActivate: [AuthGuard]
   },

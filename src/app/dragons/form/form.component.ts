@@ -46,7 +46,7 @@ export class FormComponent implements OnInit {
   }
 
   isCreate() {
-    return !this.activatedRoute.snapshot.params.slug;
+    return !this.isEdit() && !this.isReadonly();
   }
 
   isEdit() {
@@ -57,7 +57,10 @@ export class FormComponent implements OnInit {
   }
 
   isReadonly() {
-    return !this.isEdit() && !this.isCreate();
+    return (
+      this.activatedRoute.snapshot.url[1] &&
+      this.activatedRoute.snapshot.url[1].path === "show"
+    );
   }
 
   onBack() {
