@@ -4,7 +4,7 @@ Simple Angular application made with [Angular CLI](https://github.com/angular/an
 
 You can check this application running [here](http://ng-dragons.now.sh).
 
-Username: demo
+Username: demo <br/>
 Password: demo
 
 ## Storybook
