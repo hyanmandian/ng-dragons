@@ -29,12 +29,12 @@ export class DragonsComponent implements OnInit {
   fetch() {
     this.loading = true;
 
-    return this.dragonService.total().subscribe(total => {
+    return this.dragonService.total().subscribe(total =>
       this.dragonService.all({ total }).subscribe(dragons => {
         this.table.data = dragons;
         this.loading = false;
-      });
-    });
+      })
+    );
   }
 
   delete(dragon) {

@@ -7,4 +7,16 @@
   td:last-child {
     text-align: right;
   }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.actions button {
+  margin-right: 25px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }

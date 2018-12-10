@@ -3,7 +3,7 @@
     <mat-toolbar-row class="mat-elevation-z6">
       <span>Ng Dragons</span>
 
-      <div>
+      <div class="actions">
         <button mat-icon-button (click)="logout()">
           <mat-icon aria-label="Logout">exit_to_app</mat-icon>
         </button>
@@ -12,17 +12,19 @@
   </mat-toolbar>
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <h1>{{ title }}</h1>
-
-      <div>
-        <ng-content select="[app-layout-actions]"></ng-content>
+      <div class="actions">
+        <button *ngIf="hasBack()" mat-icon-button (click)="handleBack()">
+          <mat-icon aria-label="Back">arrow_back</mat-icon>
+        </button>
+        <h1>{{ title }}</h1>
       </div>
+
+      <div><ng-content select="[app-layout-actions]"></ng-content></div>
     </mat-toolbar-row>
   </mat-toolbar>
-  <main>
-    <ng-content></ng-content>
-  </main>
+  <main><ng-content></ng-content></main>
   <footer>
-    Made with <mat-icon aria-label="love">favorite</mat-icon> by <a href="https://github.com/hyanmandian">Hyan Mandian</a>
+    Made with <mat-icon aria-label="love">favorite</mat-icon> by
+    <a href="https://github.com/hyanmandian">Hyan Mandian</a>
   </footer>
 </div>

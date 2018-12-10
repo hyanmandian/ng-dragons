@@ -1,0 +1,91 @@
+<app-layout (onBack)="onBack()" title="{{ getTitle() }}">
+  <app-loader *ngIf="loading"></app-loader>
+
+  <div class="actions" *ngIf="isReadonly()" app-layout-actions>
+    <a [routerLink]="['', data.slug, 'edit']" mat-raised-button>
+      <mat-icon aria-label="Edit dragon">edit</mat-icon>
+    </a>
+  </div>
+
+  <form class="form" #form="ngForm" (ngSubmit)="save(form)">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input
+        [readonly]="isReadonly()"
+        matInput
+        required
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="data.name"
+        placeholder="Dragon name"
+      />
+      <mat-error *ngIf="name.invalid">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Type</mat-label>
+      <input
+        [readonly]="isReadonly()"
+        matInput
+        required
+        name="type"
+        #type="ngModel"
+        [(ngModel)]="data.type"
+        placeholder="Dragon type"
+      />
+      <mat-error *ngIf="type.invalid">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isReadonly()">
+      <mat-label>Slug</mat-label>
+      <input
+        readonly
+        matInput
+        required
+        name="slug"
+        #slug="ngModel"
+        [(ngModel)]="data.slug"
+        placeholder="Dragon slug"
+      />
+      <mat-error *ngIf="slug.invalid">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isReadonly()">
+      <mat-label>Created at</mat-label>
+      <input
+        readonly
+        matInput
+        required
+        name="created_at"
+        #created_at="ngModel"
+        [(ngModel)]="data.created_at"
+        placeholder="Dragon created_at"
+      />
+      <mat-error *ngIf="created_at.invalid">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Histories</mat-label>
+      <input
+        [readonly]="isReadonly()"
+        matInput
+        required
+        name="histories"
+        #histories="ngModel"
+        [(ngModel)]="data.histories"
+        placeholder="Dragon histories (comma separated)"
+      />
+      <mat-error *ngIf="histories.invalid">Required</mat-error>
+    </mat-form-field>
+
+    <button
+      *ngIf="!isReadonly()"
+      mat-raised-button
+      color="primary"
+      [disabled]="!form.valid"
+      type="submit"
+    >
+      Save
+    </button>
+  </form>
+</app-layout>

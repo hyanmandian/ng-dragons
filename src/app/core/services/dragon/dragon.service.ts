@@ -1,17 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { map } from "rxjs/operators";
+import Dragon from '../../models/dragon.model';
 
 const BASE_URL = "https://dragons-api.herokuapp.com/api/dragons";
-
-interface Dragon {
-  _id: string;
-  name: string;
-  type: string;
-  created_at: string;
-  slug: string;
-  histories: [];
-}
 
 interface Params {
   total: string;
@@ -46,16 +38,30 @@ export class DragonService {
           items
             .filter(({ slug }) => !!slug)
             .sort((a, b) => {
-              if (a.name < b.name) {
+              if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
                 return -1;
               }
-              if (a.name > b.name) {
+
+              if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
                 return 1;
               }
+
               return 0;
             })
         )
       );
+  }
+
+  show(slug: string) {
+    return this.http.get<Dragon>(`${BASE_URL}/${slug}`);
+  }
+
+  store(data: Dragon) {
+    return this.http.post<Dragon>(BASE_URL, data);
+  }
+
+  update(slug: string, data: Dragon) {
+    return this.http.put(`${BASE_URL}/${slug}`, data);
   }
 
   delete(slug: string) {

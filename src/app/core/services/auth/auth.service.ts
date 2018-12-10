@@ -1,11 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-
-interface Credentials {
-  user: string;
-  pass: string;
-  redirectTo?: string;
-}
+import Credentials from '../../models/credentials.model';
 
 const CREDENTIALS = {
   user: "demo",
