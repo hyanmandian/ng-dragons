@@ -8,8 +8,8 @@ interface Data {
 
 @Component({
   selector: "app-dialog",
-  templateUrl: "./dialog.component.html",
-  styleUrls: ["./dialog.component.scss"]
+  styleUrls: ["./dialog.component.scss"],
+  templateUrl: "./dialog.component.html"
 })
 export class DialogComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) private data: Data) {}

@@ -1,30 +1,30 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 import {
-  MatTableModule,
-  MatButtonModule,
   MatIconModule,
-  MatDialogModule,
-  MatInputModule
+  MatTableModule,
+  MatInputModule,
+  MatButtonModule,
+  MatDialogModule
 } from "@angular/material";
 
+import { AuthGuard } from "../core/guards/auth/auth.guard";
 import { SharedModule } from "../shared/shared.module";
+import { FormComponent } from "./form/form.component";
 import { DragonsComponent } from "./dragons.component";
 import { DragonsRoutingModule } from "./dragons-routing.module";
-import { AuthGuard } from "../core/guards/auth/auth.guard";
-import { FormComponent } from "./form/form.component";
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
+    FormsModule,
     CommonModule,
     SharedModule,
-    FormsModule,
-    MatButtonModule,
     MatIconModule,
     MatTableModule,
     MatInputModule,
     MatDialogModule,
+    MatButtonModule,
     DragonsRoutingModule
   ],
   providers: [AuthGuard],

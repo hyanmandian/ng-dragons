@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { map } from "rxjs/operators";
-import Dragon from '../../models/dragon.model';
+import Dragon from "../../models/dragon.model";
 
 const BASE_URL = "https://dragons-api.herokuapp.com/api/dragons";
 

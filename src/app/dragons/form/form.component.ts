@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-
-import { DragonService } from "src/app/core/services/dragon/dragon.service";
 import { NgForm } from "@angular/forms";
+
 import Dragon from "src/app/core/models/dragon.model";
+import { DragonService } from "src/app/core/services/dragon/dragon.service";
 
 @Component({
   selector: "app-form",
@@ -28,13 +28,18 @@ export class FormComponent implements OnInit {
 
     this.loading = true;
 
-    this.dragonService.show(slug).subscribe(({ histories, ...data }) => {
-      this.data = {
-        ...data,
-        histories: (<[]>histories).join(",")
-      };
-      this.loading = false;
-    });
+    this.dragonService.show(slug).subscribe(
+      ({ histories, ...data }) => {
+        this.data = {
+          ...data,
+          histories: (<[]>histories).join(",")
+        };
+        this.loading = false;
+      },
+      () => {
+        this.router.navigate([""]);
+      }
+    );
   }
 
   getTitle(): string {

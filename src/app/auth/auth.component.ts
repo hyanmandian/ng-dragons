@@ -22,8 +22,8 @@ export class AuthComponent implements OnInit {
       const dialog = this.dialog.open(DialogComponent, {
         data: {
           title: "Error",
-          message: e.message,
-        },
+          message: e.message
+        }
       });
 
       dialog.afterClosed().subscribe(() => form.reset());

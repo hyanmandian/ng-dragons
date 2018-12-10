@@ -8,19 +8,39 @@
     <mat-card-content>
       <mat-form-field>
         <mat-label>Username</mat-label>
-        <input matInput required name="user" #user="ngModel" ngModel placeholder="Your username" />
+        <input
+          matInput
+          required
+          name="user"
+          #user="ngModel"
+          ngModel
+          placeholder="Your username"
+        />
         <mat-error *ngIf="user.invalid">Required</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Password</mat-label>
-        <input matInput required name="pass" #pass="ngModel" ngModel type="password" placeholder="Your password" />
+        <input
+          matInput
+          required
+          name="pass"
+          #pass="ngModel"
+          ngModel
+          type="password"
+          placeholder="Your password"
+        />
         <mat-error *ngIf="user.invalid">Required</mat-error>
       </mat-form-field>
     </mat-card-content>
     <mat-divider></mat-divider>
     <mat-card-actions align="end">
-      <button mat-raised-button color="primary" [disabled]="!form.valid" type="submit">
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!form.valid"
+        type="submit"
+      >
         Login
       </button>
     </mat-card-actions>

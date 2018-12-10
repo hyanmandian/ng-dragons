@@ -5,7 +5,7 @@ import {
   MatInputModule,
   MatButtonModule,
   MatDialogModule,
-  MatDividerModule,
+  MatDividerModule
 } from "@angular/material";
 import { CommonModule } from "@angular/common";
 

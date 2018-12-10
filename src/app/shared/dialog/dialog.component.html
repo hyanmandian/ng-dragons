@@ -1,6 +1,15 @@
 <h1 mat-dialog-title>{{ data.title }}</h1>
 <mat-dialog-content [innerHTML]="data.message"></mat-dialog-content>
 <mat-dialog-actions *ngIf="data.onConfirm || data.onCancel">
-  <button mat-raised-button *ngIf="data.onCancel" (click)="data.onCancel()">Cancel</button>
-  <button mat-raised-button *ngIf="data.onConfirm" color="primary" (click)="data.onConfirm()">Confirm</button>
+  <button mat-raised-button *ngIf="data.onCancel" (click)="data.onCancel()">
+    Cancel
+  </button>
+  <button
+    mat-raised-button
+    *ngIf="data.onConfirm"
+    color="primary"
+    (click)="data.onConfirm()"
+  >
+    Confirm
+  </button>
 </mat-dialog-actions>

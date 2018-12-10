@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material";
 
 import { DragonService } from "../core/services/dragon/dragon.service";
-import { MatDialog } from "@angular/material";
 import { DialogComponent } from "../shared/dialog/dialog.component";
 
 @Component({
